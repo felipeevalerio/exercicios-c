@@ -1,0 +1,14 @@
+EXEMPLO- Programa - v0.0
+Autor: ______________________
+
+01. x = 0
+02. y = 3.500000
+03. z = A
+04. x = 65 -> A
+05. x = 3 -> 3.500000
+06. z = a -> 97
+07. z = 0 -> 48
+08. x = 0 -> 0
+
+
+Apertar ENTER para terminar.

@@ -1,0 +1,11 @@
+EXEMPLO - Programa - v0.0 - continuacao
+Autor: ______________________
+
+17. é par  (4) ? 1
+18. é impar  (4) ? 0
+19. é minuscula  (x) ? 1
+20. é maiuscula  (x) ? 0
+21. é 0 ou 1 (0) ? 1
+
+
+Apertar ENTER para terminar.
