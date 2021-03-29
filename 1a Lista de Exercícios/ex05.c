@@ -201,7 +201,7 @@ int ex11(){
     return 0;
 }
 
-int ex12(){ // Errado
+int ex12(){
     float n1,n2,n3;
     printf("Digite o valor do primeiro número: \n");
     scanf("%f",&n1);
