@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <ctype.h>
 
 int ex01();
 int ex02();
@@ -21,51 +22,51 @@ int ex15();
 int main()
 {
     setlocale(LC_ALL, "portuguese");
-    // printf("Ex01 \n");
-    // ex01();
-    // printf("------------------------ \n \n");
-    // printf("Ex02 \n");
-    // ex02();
-    // printf("------------------------ \n \n");
-    // printf("Ex03 \n");
-    // ex03();
-    // printf("------------------------ \n \n");
-    // printf("Ex04 \n");
-    // ex04();
-    // printf("------------------------ \n \n");
-    // printf("Ex05 \n");
-    // ex05();
-    // printf("------------------------ \n \n");
-    // printf("Ex06 \n");
-    // ex06();
-    // printf("------------------------ \n \n");
-    // printf("Ex07 \n");
-    // ex07();
-    // printf("------------------------ \n \n");
-    // printf("Ex08 \n");
-    // ex08();
-    // printf("------------------------ \n \n");
-    // printf("Ex09 \n");
-    // ex09();
-    // printf("------------------------ \n \n");
-    // printf("Ex10 \n");
-    // ex10();
-    // printf("------------------------ \n \n");
-    // printf("Ex11 \n");
-    // ex11();
-    // printf("------------------------ \n \n");
+    printf("Ex01 \n");
+    ex01();
+    printf("------------------------ \n \n");
+    printf("Ex02 \n");
+    ex02();
+    printf("------------------------ \n \n");
+    printf("Ex03 \n");
+    ex03();
+    printf("------------------------ \n \n");
+    printf("Ex04 \n");
+    ex04();
+    printf("------------------------ \n \n");
+    printf("Ex05 \n");
+    ex05();
+    printf("------------------------ \n \n");
+    printf("Ex06 \n");
+    ex06();
+    printf("------------------------ \n \n");
+    printf("Ex07 \n");
+    ex07();
+    printf("------------------------ \n \n");
+    printf("Ex08 \n");
+    ex08();
+    printf("------------------------ \n \n");
+    printf("Ex09 \n");
+    ex09();
+    printf("------------------------ \n \n");
+    printf("Ex10 \n");
+    ex10();
+    printf("------------------------ \n \n");
+    printf("Ex11 \n");
+    ex11();
+    printf("------------------------ \n \n");
     printf("Ex12 \n");
     ex12();
     printf("------------------------ \n \n");
-    // printf("Ex13 \n");
-    // ex13();
-    // printf("------------------------ \n \n");
-    // printf("Ex14 \n");
-    // ex14();
-    // printf("------------------------ \n \n");
-    // printf("Ex15 \n");
-    // ex15();
-    // printf("------------------------ \n \n");
+    printf("Ex13 \n");
+    ex13();
+    printf("------------------------ \n \n");
+    printf("Ex14 \n");
+    ex14();
+    printf("------------------------ \n \n");
+    printf("Ex15 \n");
+    ex15();
+    printf("------------------------ \n \n");
 
     return 0;
 }
@@ -200,7 +201,7 @@ int ex11(){
     return 0;
 }
 
-int ex12(){
+int ex12(){ // Errado
     float n1,n2,n3;
     printf("Digite o valor do primeiro número: \n");
     scanf("%f",&n1);
@@ -209,7 +210,41 @@ int ex12(){
     printf("Digite o valor do terceiro número: \n");
     scanf("%f",&n3);
 
-    printf("O número %.2f não está entre %.2f e %.2f ? %d \n",n1,n2,n3,(n2 > n3 && n3 > n1) || (n1 < n2 && n2 < n3));
+    printf("O número %.2f não está entre %.2f e %.2f ? %d \n",n1,n2,n3,(n2 > n3 && (n1 > n2 || n1 < n3)) || (n3 > n2 && (n1 > n3 || n1 < n2)) || (n2 == n3));
                                                                         
+    return 0;
+}
+
+int ex13(){
+    char c1,c2,c3;
+    printf("Digite o valor do primeiro caractere: \n");
+    scanf("%s",&c1);
+    printf("Digite o valor do segundo caractere: \n");
+    scanf("%s",&c2);
+    printf("Digite o valor do terceiro caractere: \n");
+    scanf("%s",&c3);
+    printf("O caractere '%c' está entre '%c' e '%c' ? %d \n",c1,c2,c3,(c2 > c1 && c3 < c1) || (c2 < c1 && c3 > c1));
+
+    return 0;
+}   
+
+int ex14(){
+    char c1, c2 , c3;
+    printf("Digite o valor do primeiro caractere: \n");
+    scanf("%s",&c1);
+    printf("Digite o valor do segundo caractere: \n");
+    scanf("%s",&c2);
+    printf("Digite o valor do terceiro caractere: \n");
+    scanf("%s",&c3);
+    printf("Os caracteres '%c' , '%c' e '%c' estão de forma crescente lexicograficamente ? %d \n",c1,c2,c3,(c1 < c2 && c2 < c3));
+
+    return 0;
+}
+
+int ex15(){
+    char c;
+    printf("Digite um caractere para ver se ele é maiúsuculo: \n");
+    scanf("%s",&c);
+    printf("O caractere %c é maiúsculo ? %d \n",c,isupper(c) ? 1 : 0);
     return 0;
 }
