@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 class Carro { 
     public:
@@ -11,7 +12,7 @@ class Carro {
         float calculaIPVA(int anoAtual){
             int anoTotal = anoAtual - anoFabricacao;
             float ipva = (valor * 5 / 100) - (anoTotal * 10 / 100);
-            return ipva;
+            return ipva < 0 ? 0 : ipva;
         };
 };
 
@@ -21,6 +22,7 @@ int main(){
     int anoAtual=2021;
 
     system("clear");
+    setlocale(LC_ALL, "portuguese");
 
     printf("Digite a marca do carro:");
     scanf("%s", &c.marca);
